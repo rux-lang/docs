@@ -1,0 +1,63 @@
+site_name: Rux Standard Library
+site_description: Official reference documentation for the Rux Standard Library
+site_url: https://rux-lang.github.io
+
+repo_name: rux-lang/Std
+repo_url: https://github.com/rux-lang/Std
+
+copyright: Copyright © 2026 Rux Contributors
+
+strict: true
+
+theme:
+  name: material
+
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+  icon:
+    repo: fontawesome/brands/github
+
+  palette:
+    scheme: slate
+    primary: black
+    accent: indigo
+
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+
+    - content.code.copy
+
+    - search.suggest
+    - search.highlight
+
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - tables
+  - footnotes
+
+  - toc:
+      permalink: true
+
+  - pymdownx.details
+
+  - pymdownx.highlight:
+      use_pygments: true
+      pygments_lang_class: true
+
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - awesome-pages
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false

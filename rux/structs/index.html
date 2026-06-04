@@ -1,0 +1,2539 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official reference documentation for Rux">
+      
+      
+      
+        <link rel="canonical" href="https://rux-lang.github.io/rux/structs/">
+      
+      
+        <link rel="prev" href="../pointers/">
+      
+      
+        <link rel="next" href="../types/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Structs - Rux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#structs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Structs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rux-lang/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rux-lang/Std
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Rux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rux-lang/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rux-lang/Std
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rux
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct Declarations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct Declarations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic Structs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generic Structs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construction-with-type-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construction with type arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct Construction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicit-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example with generics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-in-a-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example in a match
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-and-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods and extend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods and extend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instance methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operator methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Implementations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#another-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Another example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Size Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitive-field-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive field sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-size-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct size computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested structs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-structs-and-named-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Structs and Named Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested Structs and Named Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-with-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct with visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-construction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-field-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing field type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-semicolon-after-a-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing semicolon after a field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-construction-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid construction field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-field-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate field names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lowering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lowering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct Declarations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct Declarations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic Structs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generic Structs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construction-with-type-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construction with type arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct Construction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicit-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example with generics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-in-a-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example in a match
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-and-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods and extend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods and extend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instance methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operator methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Implementations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#another-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Another example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Size Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitive-field-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive field sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-size-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct size computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested structs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-structs-and-named-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Structs and Named Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested Structs and Named Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-with-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct with visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-construction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-field-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing field type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-semicolon-after-a-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing semicolon after a field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-construction-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid construction field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-field-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate field names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lowering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lowering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="structs">Structs<a class="headerlink" href="#structs" title="Permanent link">&para;</a></h1>
+<p>Structs define user-owned composite types made from named fields.</p>
+<p>A struct groups related values together into a single record-like type with a fixed field order and a compiler-defined memory layout.</p>
+<p>Structs are one of the core data types in Rux and are used for everything from small value objects to low-level runtime structures.</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w"> </span><span class="p">};</span>
+
+<span class="k">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+<p>Struct-related syntax includes:</p>
+<ul>
+<li>struct declarations</li>
+<li>public fields</li>
+<li>generic struct parameters</li>
+<li>struct construction</li>
+<li>field access</li>
+<li>struct patterns</li>
+<li>methods via <code>extend</code></li>
+</ul>
+<hr />
+<h2 id="struct-declarations">Struct Declarations<a class="headerlink" href="#struct-declarations" title="Permanent link">&para;</a></h2>
+<p>A struct is declared with the <code>struct</code> keyword.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Each field has:</p>
+<ul>
+<li>a name</li>
+<li>a type</li>
+<li>an optional <code>pub</code> modifier</li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fields are written in declaration order.</li>
+<li>Each field ends with a semicolon.</li>
+<li>Struct declarations may appear at module level or inside nested modules.</li>
+</ul>
+<hr />
+<h2 id="generic-structs">Generic Structs<a class="headerlink" href="#generic-structs" title="Permanent link">&para;</a></h2>
+<p>Structs may declare type parameters.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Box</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Type parameters are parsed, preserved through semantic analysis, and carried into lowering.</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Pair</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">first</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<span class="w">    </span><span class="n">second</span><span class="p">:</span><span class="w"> </span><span class="n">U</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="construction-with-type-arguments">Construction with type arguments<a class="headerlink" href="#construction-with-type-arguments" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pair</span><span class="p">&lt;</span><span class="kt">int32</span><span class="p">,</span><span class="w"> </span><span class="kt">float64</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">first</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">second</span><span class="p">:</span><span class="w"> </span><span class="m">2.5</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Generic type arguments appear in angle brackets.</li>
+<li>The compiler preserves generic type information in the type system and lowering layers.</li>
+<li>Backend code generation for generics is a separate concern from parsing and semantic tracking.</li>
+</ul>
+<hr />
+<h2 id="field-rules">Field Rules<a class="headerlink" href="#field-rules" title="Permanent link">&para;</a></h2>
+<p>A struct field is declared as:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="p">;</span>
+</code></pre></div>
+<p>Example:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Size</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h3>
+<p>A field may be marked public:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Token</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">kind</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Public fields are intended to be visible outside the defining module or package according to the language’s visibility rules.</p>
+<h3 id="notes_2">Notes<a class="headerlink" href="#notes_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Field names must be identifiers.</li>
+<li>Field types may be any valid Rux type.</li>
+<li>Fields cannot currently be declared without a type.</li>
+</ul>
+<hr />
+<h2 id="struct-construction">Struct Construction<a class="headerlink" href="#struct-construction" title="Permanent link">&para;</a></h2>
+<p>A struct value can be constructed using brace syntax.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="explicit-construction">Explicit construction<a class="headerlink" href="#explicit-construction" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="m">30</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="notes_3">Notes<a class="headerlink" href="#notes_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Field names are written explicitly in the initializer.</li>
+<li>The initializer order does not need to match the declaration order unless the compiler or front end enforces an order rule.</li>
+<li>The parser supports generic struct initialization syntax.</li>
+</ul>
+<h3 id="example-with-generics">Example with generics<a class="headerlink" href="#example-with-generics" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Box</span><span class="p">&lt;</span><span class="kt">int32</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="field-access">Field Access<a class="headerlink" href="#field-access" title="Permanent link">&para;</a></h2>
+<p>Fields are accessed using the <code>.</code> operator.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w"> </span><span class="p">};</span>
+<span class="k">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+<p>Example:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="n">Print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
+<p>Field access is a normal postfix expression and participates in later semantic checks and lowering.</p>
+<hr />
+<h2 id="struct-patterns">Struct Patterns<a class="headerlink" href="#struct-patterns" title="Permanent link">&para;</a></h2>
+<p>Structs can be destructured in pattern position.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<p>Or with explicit field patterns:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">px</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">py</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<p>Struct patterns are used in bindings and match arms.</p>
+<h3 id="example-in-a-match">Example in a <code>match</code><a class="headerlink" href="#example-in-a-match" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">match</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Print</span><span class="p">(</span><span class="n">y</span><span class="p">),</span>
+<span class="w">    </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Print</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Struct patterns must match the struct type shape.</li>
+<li>Field patterns are parsed separately from struct expressions.</li>
+<li>Pattern syntax is part of the parser’s supported feature set, not an afterthought.</li>
+</ul>
+<hr />
+<h2 id="methods-and-extend">Methods and <code>extend</code><a class="headerlink" href="#methods-and-extend" title="Permanent link">&para;</a></h2>
+<p>Methods can be attached to structs with <code>extend</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="instance-methods">Instance methods<a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h3>
+<p>Instance methods take <code>self</code> as their first parameter.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="static-methods">Static methods<a class="headerlink" href="#static-methods" title="Permanent link">&para;</a></h3>
+<p>A method without <code>self</code> behaves like an associated function.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">New</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Called as:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">::</span><span class="n">New</span><span class="p">(</span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="m">3.0</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="operator-methods">Operator methods<a class="headerlink" href="#operator-methods" title="Permanent link">&para;</a></h3>
+<p>A struct may define operator methods inside <code>extend</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">func</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">:</span><span class="w"> </span><span class="n">Vector</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+<span class="w">            </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+<span class="w">            </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">z</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These are resolved by the compiler like ordinary methods, but using operator syntax.</p>
+<hr />
+<h2 id="interface-implementations">Interface Implementations<a class="headerlink" href="#interface-implementations" title="Permanent link">&para;</a></h2>
+<p>The parser supports <code>extend</code> in interface-related forms as well.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>or:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This allows a struct to implement an interface by attaching the required methods.</p>
+<h3 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The compiler tracks methods by type.</li>
+<li>Interface implementation is associated with the concrete type name.</li>
+<li>Interface method tables are used later during lowering and backend generation.</li>
+</ul>
+<hr />
+<h2 id="visibility">Visibility<a class="headerlink" href="#visibility" title="Permanent link">&para;</a></h2>
+<p>Structs may be public.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Public visibility can apply to the struct itself.</li>
+<li>Public visibility can also apply to individual fields.</li>
+<li>Visibility is tracked by the parser and semantic analyzer.</li>
+</ul>
+<hr />
+<h2 id="memory-layout">Memory Layout<a class="headerlink" href="#memory-layout" title="Permanent link">&para;</a></h2>
+<p>Struct layout is determined by the compiler.</p>
+<p>The current layout model preserves field order and computes offsets using alignment rules.</p>
+<h3 id="general-rules">General rules<a class="headerlink" href="#general-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fields are laid out in declaration order.</li>
+<li>Each field is aligned based on its size.</li>
+<li>The overall struct size is padded up to the maximum alignment.</li>
+<li>Alignment is capped at 8 bytes in the current layout model.</li>
+</ul>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A typical layout for this struct is:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Offset</th>
+<th style="text-align: right;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>y</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+<p>Total size:</p>
+<div class="language-text highlight"><pre><span></span><code>16 bytes
+</code></pre></div>
+<h3 id="another-example">Another example<a class="headerlink" href="#another-example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Mixed</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A typical layout is:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Offset</th>
+<th style="text-align: right;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>b</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p>The compiler inserts padding between fields when required to satisfy alignment.</p>
+<h3 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Field offsets are compiler-defined, not arbitrary.</li>
+<li>Field order is preserved.</li>
+<li>Layout depends on the field types and their sizes.</li>
+<li>Named fields that themselves resolve to structured types may contribute their own layout and alignment.</li>
+</ul>
+<hr />
+<h2 id="size-rules">Size Rules<a class="headerlink" href="#size-rules" title="Permanent link">&para;</a></h2>
+<p>The compiler’s size model is used by semantic analysis, lowering, and backend code generation.</p>
+<h3 id="primitive-field-sizes">Primitive field sizes<a class="headerlink" href="#primitive-field-sizes" title="Permanent link">&para;</a></h3>
+<p>Common field sizes are:</p>
+<ul>
+<li><code>bool8</code>, <code>char8</code>, <code>int8</code>, <code>uint8</code> → 1 byte</li>
+<li><code>bool16</code>, <code>char16</code>, <code>int16</code>, <code>uint16</code> → 2 bytes</li>
+<li><code>bool32</code>, <code>char32</code>, <code>int32</code>, <code>uint32</code>, <code>float32</code> → 4 bytes</li>
+<li><code>int64</code>, <code>uint64</code>, <code>int</code>, <code>uint</code>, <code>float64</code>, pointers, <code>String</code>, function values → 8 bytes</li>
+<li>slices → 16 bytes</li>
+<li><code>opaque</code> → 0 bytes</li>
+</ul>
+<h3 id="struct-size-computation">Struct size computation<a class="headerlink" href="#struct-size-computation" title="Permanent link">&para;</a></h3>
+<p>For each field:</p>
+<ol>
+<li>determine the field’s size</li>
+<li>compute alignment as the field size clamped to 8 bytes</li>
+<li>align the current offset</li>
+<li>place the field</li>
+<li>advance the offset by the field size</li>
+</ol>
+<p>After all fields are placed, the total size is aligned to the maximum field alignment.</p>
+<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Small</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Total size is typically 3 bytes, then rounded up to the struct alignment boundary.</p>
+<h3 id="nested-structs">Nested structs<a class="headerlink" href="#nested-structs" title="Permanent link">&para;</a></h3>
+<p>Nested structs contribute their own size and alignment.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Outer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">inner</span><span class="p">:</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tag</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The compiler uses the known layout of <code>Point</code> when computing the layout of <code>Outer</code>.</p>
+<hr />
+<h2 id="nested-structs-and-named-types">Nested Structs and Named Types<a class="headerlink" href="#nested-structs-and-named-types" title="Permanent link">&para;</a></h2>
+<p>Struct fields may themselves be named types.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">city</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">zip</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">address</span><span class="p">:</span><span class="w"> </span><span class="n">Address</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The compiler resolves the named field type during semantic analysis and uses the resolved type during layout computation.</p>
+<h3 id="notes_8">Notes<a class="headerlink" href="#notes_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Named fields are not flattened automatically.</li>
+<li>The struct contains the nested type as a field.</li>
+<li>Layout is computed recursively through known named types.</li>
+</ul>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="simple-struct">Simple struct<a class="headerlink" href="#simple-struct" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="struct-with-visibility">Struct with visibility<a class="headerlink" href="#struct-with-visibility" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="n">Config</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">port</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="generic-struct">Generic struct<a class="headerlink" href="#generic-struct" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Box</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="nested-struct">Nested struct<a class="headerlink" href="#nested-struct" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">topLeft</span><span class="p">:</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span>
+<span class="w">    </span><span class="n">bottomRight</span><span class="p">:</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="struct-construction_1">Struct construction<a class="headerlink" href="#struct-construction_1" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="struct-pattern">Struct pattern<a class="headerlink" href="#struct-pattern" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="method-implementation">Method implementation<a class="headerlink" href="#method-implementation" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h2>
+<h3 id="missing-field-type">Missing field type<a class="headerlink" href="#missing-field-type" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="missing-semicolon-after-a-field">Missing semicolon after a field<a class="headerlink" href="#missing-semicolon-after-a-field" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="invalid-construction-field">Invalid construction field<a class="headerlink" href="#invalid-construction-field" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="duplicate-field-names">Duplicate field names<a class="headerlink" href="#duplicate-field-names" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="pattern-mismatch">Pattern mismatch<a class="headerlink" href="#pattern-mismatch" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<p>when <code>Point</code> does not have a <code>z</code> field.</p>
+<hr />
+<h2 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h2>
+<h3 id="parsing">Parsing<a class="headerlink" href="#parsing" title="Permanent link">&para;</a></h3>
+<p>The parser recognizes struct declarations with:</p>
+<ul>
+<li><code>struct Name { ... }</code></li>
+<li>optional generic type parameters</li>
+<li>field declarations</li>
+<li>optional public fields</li>
+</ul>
+<p>It also recognizes struct initialization and struct patterns in expression and pattern position.</p>
+<h3 id="semantic-analysis">Semantic analysis<a class="headerlink" href="#semantic-analysis" title="Permanent link">&para;</a></h3>
+<p>The semantic analyzer stores struct declarations, tracks their methods, and records whether a type implements an interface.</p>
+<p>It also preserves type parameters and uses named struct types during type resolution.</p>
+<h3 id="lowering">Lowering<a class="headerlink" href="#lowering" title="Permanent link">&para;</a></h3>
+<p>Struct values are lowered to concrete layouts with field offsets and total size.</p>
+<p>The backend computes:</p>
+<ul>
+<li>field offsets</li>
+<li>field sizes</li>
+<li>total struct size</li>
+<li>alignment</li>
+</ul>
+<h3 id="backend-behavior">Backend behavior<a class="headerlink" href="#backend-behavior" title="Permanent link">&para;</a></h3>
+<p>The backend uses the resolved struct layout when emitting loads, stores, field accesses, and ABI-relevant code.</p>
+<p>Generic type names are preserved as named forms in the pipeline, and the backend computes layout using the resolved field types available at that stage.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Rux Contributors
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

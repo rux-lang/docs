@@ -1,0 +1,1830 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official reference documentation for Rux">
+      
+      
+      
+        <link rel="canonical" href="https://rux-lang.github.io/rux/unions/">
+      
+      
+        <link rel="prev" href="../types/">
+      
+      
+        <link rel="next" href="../variables/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Unions - Rux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rux-lang/Rux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Rux
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Rux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rux-lang/Rux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Rux
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rux
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-union-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Union Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Union Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-declaration-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union Declaration Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Union Declaration Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-unions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public unions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-type-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Type Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Type Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-diagnostic-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example diagnostic cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-end-and-backend-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Front End and Backend Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Front End and Backend Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union-with-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union with pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compact-enum-like-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact enum-like storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-field-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing field type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-semicolon-after-a-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing semicolon after a field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-field-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate field names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-field-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown field type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice-treating-a-union-like-a-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice: treating a union like a struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keep-the-active-variant-obvious" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep the active variant obvious
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-union-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Union Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Union Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-declaration-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union Declaration Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Union Declaration Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-unions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public unions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-type-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Type Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Type Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-diagnostic-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example diagnostic cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-end-and-backend-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Front End and Backend Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Front End and Backend Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union-with-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union with pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compact-enum-like-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compact enum-like storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-field-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing field type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-semicolon-after-a-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing semicolon after a field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-field-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate field names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-field-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown field type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice-treating-a-union-like-a-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice: treating a union like a struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keep-the-active-variant-obvious" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep the active variant obvious
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="unions">Unions<a class="headerlink" href="#unions" title="Permanent link">&para;</a></h1>
+<p>Unions are user-defined composite types where multiple field names share the same storage.</p>
+<p>A union gives one block of memory several possible shapes. At any moment, that memory should be interpreted as exactly one of the declared fields.</p>
+<p>That makes unions useful for compact representations, low-level interop, tagged data models, and internal compiler or runtime structures.</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">pub</span><span class="w"> </span><span class="kd">union</span><span class="w"> </span><span class="n">TokenData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">kind</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">payload</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A union declaration may include:</p>
+<ul>
+<li>an optional <code>pub</code> modifier</li>
+<li>a name</li>
+<li>a field list</li>
+<li>one type annotation per field</li>
+</ul>
+<p>Union fields are written with semicolons.</p>
+<hr />
+<h2 id="what-a-union-means">What a Union Means<a class="headerlink" href="#what-a-union-means" title="Permanent link">&para;</a></h2>
+<p>A union is not a struct with extra memory tricks.</p>
+<p>A struct stores each field separately.
+A union shares one storage area across all fields.</p>
+<p>That difference matters a lot:</p>
+<ul>
+<li>structs are for records where every field exists at once</li>
+<li>unions are for alternatives where only one interpretation is active at a time</li>
+</ul>
+<h3 id="good-practice">Good practice<a class="headerlink" href="#good-practice" title="Permanent link">&para;</a></h3>
+<p>Use a union when the alternatives are mutually exclusive.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice">Bad practice<a class="headerlink" href="#bad-practice" title="Permanent link">&para;</a></h3>
+<p>Do not use a union just because it looks compact if the data is actually a record.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="c1">// bad idea: these values are not alternatives</span>
+<span class="kd">union</span><span class="w"> </span><span class="n">PersonLike</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If all fields are supposed to be valid together, a struct is the correct choice.</p>
+<hr />
+<h2 id="union-declaration-syntax">Union Declaration Syntax<a class="headerlink" href="#union-declaration-syntax" title="Permanent link">&para;</a></h2>
+<p>The general shape of a union is:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">field1</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="p">;</span>
+<span class="w">    </span><span class="n">field2</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">integer</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">floating</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pointer</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="public-unions">Public unions<a class="headerlink" href="#public-unions" title="Permanent link">&para;</a></h3>
+<p>A union may be marked <code>pub</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="kd">union</span><span class="w"> </span><span class="n">ExportedValue</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Public visibility controls whether the union is visible outside the defining scope, following the same visibility rules used by the rest of the language.</p>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The parser recognizes <code>union</code> declarations as top-level items.</li>
+<li>Union declarations may appear at module level or inside nested modules.</li>
+<li>The current parser does not show a type-parameter list for unions.</li>
+</ul>
+<hr />
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
+<p>Each union field is declared as:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="p">;</span>
+</code></pre></div>
+<p>Example:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">FlagValue</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">bits</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">raw</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="field-rules">Field rules<a class="headerlink" href="#field-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Field names must be identifiers.</li>
+<li>Each field must have a type.</li>
+<li>Each field ends with a semicolon.</li>
+<li>Field order is preserved in the declaration.</li>
+</ul>
+<h3 id="good-practice_1">Good practice<a class="headerlink" href="#good-practice_1" title="Permanent link">&para;</a></h3>
+<p>Keep field names descriptive of the active interpretation.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">PacketData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">headerBytes</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">checksum</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_1">Bad practice<a class="headerlink" href="#bad-practice_1" title="Permanent link">&para;</a></h3>
+<p>Do not use vague field names like <code>x</code>, <code>y</code>, <code>z</code> unless the meaning is actually obvious.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">BadNaming</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A reader should be able to tell what each alternative means without decoding the whole codebase.</p>
+<hr />
+<h2 id="field-type-rules">Field Type Rules<a class="headerlink" href="#field-type-rules" title="Permanent link">&para;</a></h2>
+<p>Fields may use any valid Rux type.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Storage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">byte</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="good-practice_2">Good practice<a class="headerlink" href="#good-practice_2" title="Permanent link">&para;</a></h3>
+<p>Prefer small, explicit types when the goal is a compact representation.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">SmallValue</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">flag</span><span class="p">:</span><span class="w"> </span><span class="kt">bool8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_2">Bad practice<a class="headerlink" href="#bad-practice_2" title="Permanent link">&para;</a></h3>
+<p>Do not hide huge or unrelated payloads behind a union unless that is really the intended model.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">EverythingBagel</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">number</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">nested</span><span class="p">:</span><span class="w"> </span><span class="n">SomeHugeStruct</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That kind of design can become unclear fast if the active alternative is not tracked carefully.</p>
+<hr />
+<h2 id="semantic-behavior">Semantic Behavior<a class="headerlink" href="#semantic-behavior" title="Permanent link">&para;</a></h2>
+<p>The compiler currently treats a union as a named type during semantic analysis.</p>
+<p>The semantic analyzer records the union name in the type table and validates the field list.</p>
+<p>From the reviewed implementation, unions are checked for:</p>
+<ul>
+<li>duplicate field names</li>
+<li>valid field type resolution</li>
+</ul>
+<h3 id="example-diagnostic-cases">Example diagnostic cases<a class="headerlink" href="#example-diagnostic-cases" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">UnknownType</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="good-practice_3">Good practice<a class="headerlink" href="#good-practice_3" title="Permanent link">&para;</a></h3>
+<p>Keep union field sets small and obvious.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">ParseResult</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ok</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That kind of declaration is easy to reason about in both the compiler and the reader's head.</p>
+<h3 id="bad-practice_3">Bad practice<a class="headerlink" href="#bad-practice_3" title="Permanent link">&para;</a></h3>
+<p>Do not rely on a union to document meaning by itself.</p>
+<p>A union only says the storage is shared. It does not automatically tell the reader which field is active.</p>
+<p>If the program needs to know which field is currently valid, that state should usually be stored separately.</p>
+<hr />
+<h2 id="front-end-and-backend-status">Front End and Backend Status<a class="headerlink" href="#front-end-and-backend-status" title="Permanent link">&para;</a></h2>
+<p>Unions are currently supported in the front end.</p>
+<p>The reviewed pipeline shows:</p>
+<ul>
+<li>parser support for <code>union Name { ... }</code></li>
+<li>semantic-analysis support for registering unions as types</li>
+<li>lowering metadata that carries union declarations forward</li>
+</ul>
+<p>The reviewed files do not show a dedicated union-specific backend layout or code-generation path.</p>
+<p>That means unions should be documented as a parsed and analyzed feature, not as a fully proven backend feature.</p>
+<h3 id="good-practice_4">Good practice<a class="headerlink" href="#good-practice_4" title="Permanent link">&para;</a></h3>
+<p>Describe the current status honestly.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
+<span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The syntax is real, but the backend story should be treated as implementation-dependent until the union path is explicitly finished.</p>
+<h3 id="bad-practice_4">Bad practice<a class="headerlink" href="#bad-practice_4" title="Permanent link">&para;</a></h3>
+<p>Do not claim full runtime support if the lower layers have not been verified yet.</p>
+<p>That leads to docs that look polished but become misleading the moment someone tries to use the feature seriously.</p>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="simple-union">Simple union<a class="headerlink" href="#simple-union" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">integer</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">floating</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="union-with-pointers">Union with pointers<a class="headerlink" href="#union-with-pointers" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
+<span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="public-union">Public union<a class="headerlink" href="#public-union" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="kd">union</span><span class="w"> </span><span class="n">Payload</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">bytes</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">count</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="compact-enum-like-storage">Compact enum-like storage<a class="headerlink" href="#compact-enum-like-storage" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">TokenData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">kind</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">payload</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This is a reasonable union shape when the code needs one of several interpretations but does not want a larger record type.</p>
+<hr />
+<h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h2>
+<h3 id="missing-field-type">Missing field type<a class="headerlink" href="#missing-field-type" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="missing-semicolon-after-a-field">Missing semicolon after a field<a class="headerlink" href="#missing-semicolon-after-a-field" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="duplicate-field-names">Duplicate field names<a class="headerlink" href="#duplicate-field-names" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">float32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="unknown-field-type">Unknown field type<a class="headerlink" href="#unknown-field-type" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">UnknownType</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice-treating-a-union-like-a-struct">Bad practice: treating a union like a struct<a class="headerlink" href="#bad-practice-treating-a-union-like-a-struct" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">union</span><span class="w"> </span><span class="n">BadModel</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If both values are always needed together, this should be a struct instead.</p>
+<hr />
+<h2 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h2>
+<h3 id="keep-the-active-variant-obvious">Keep the active variant obvious<a class="headerlink" href="#keep-the-active-variant-obvious" title="Permanent link">&para;</a></h3>
+<p>A union is only safe when the program can tell which field is currently meaningful.</p>
+<p>If that information is not stored somewhere, the code becomes easy to misuse.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Rux Contributors
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

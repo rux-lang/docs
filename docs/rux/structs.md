@@ -88,6 +88,7 @@ struct Pair<T, U> {
 }
 ```
 
+
 ### Construction with type arguments
 
 ```rux
@@ -99,6 +100,7 @@ let p = Pair<int32, float64> { first: 1, second: 2.5 };
 * Generic type arguments appear in angle brackets.
 * The compiler preserves generic type information in the type system and lowering layers.
 * Backend code generation for generics is a separate concern from parsing and semantic tracking.
+* Generics are **not** yet implemented in the backend.
 
 ---
 
@@ -615,9 +617,3 @@ The backend computes:
 * field sizes
 * total struct size
 * alignment
-
-### Backend behavior
-
-The backend uses the resolved struct layout when emitting loads, stores, field accesses, and ABI-relevant code.
-
-Generic type names are preserved as named forms in the pipeline, and the backend computes layout using the resolved field types available at that stage.

@@ -791,28 +791,3 @@ When a function is called, the analyzer selects a matching overload using argume
 Method lookup is based on the receiver type.
 
 The analyzer also handles interface methods and associated function types so that method calls and method references can be typed correctly.
-
-### HIR lowering
-
-At the HIR stage, a function is converted into a structured representation with:
-
-* name
-* public visibility
-* calling convention
-* parameter list
-* return type
-* body
-* generic parameters
-
-Overloaded functions are given distinct internal names.
-
-Default arguments are injected during call lowering.
-Variadic arguments are collapsed into a slice-like value when needed.
-
-### LIR lowering
-
-At the low-level IR stage, each function becomes an entry block plus the instructions needed to represent its body.
-
-The lowering step allocates storage for ordinary parameters, treats slices and interfaces specially, and emits calls, loads, stores, and returns as needed.
-
-External functions are lowered as declarations without bodies.

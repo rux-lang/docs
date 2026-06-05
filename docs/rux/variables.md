@@ -424,35 +424,3 @@ Use explicit types where the value crosses modules, packages, or FFI boundaries.
 ### Prefer inference for local clarity
 
 When the initializer makes the type obvious, inference keeps code compact.
-
----
-
-## Implementation Notes
-
-This section is for readers who want to know how the compiler handles variables internally.
-
-### Parsing
-
-The parser recognizes variable declarations using `let` and `var`.
-
-A declaration may include a name, an optional type annotation, and an initializer.
-
-### Semantic analysis
-
-The semantic analyzer resolves the declared type, checks mutability, validates assignment compatibility, and tracks scope.
-
-It also handles pattern-based declarations and can infer or validate the resulting type.
-
-### HIR lowering
-
-In the high-level intermediate representation, variables keep their type and mutability information.
-
-This is where the compiler preserves the source-level meaning of the declaration before lower-level storage decisions are made.
-
-### LIR lowering
-
-At the low-level IR stage, a local variable typically becomes storage allocated in the current function.
-
-The initializer is written into that storage, and later reads load from the associated slot.
-
-That means the compiler eventually turns a variable declaration into real storage plus load/store operations.

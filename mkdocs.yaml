@@ -1,9 +1,9 @@
-site_name: Rux Standard Library
-site_description: Official reference documentation for the Rux Standard Library
+site_name: Rux Documentation
+site_description: Official reference documentation for Rux
 site_url: https://rux-lang.github.io
 
-repo_name: rux-lang/Std
-repo_url: https://github.com/rux-lang/Std
+repo_name: Rux
+repo_url: https://github.com/rux-lang/Rux
 
 copyright: Copyright © 2026 Rux Contributors
 

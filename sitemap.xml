@@ -9,15 +9,19 @@
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://rux-lang.github.io/rux/enums/</loc>
+         <loc>https://rux-lang.github.io/rux/enums/enums/</loc>
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://rux-lang.github.io/rux/functions/</loc>
+         <loc>https://rux-lang.github.io/rux/functions/functions/</loc>
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://rux-lang.github.io/rux/pointers/</loc>
+         <loc>https://rux-lang.github.io/rux/interfaces/interfaces/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/pointers/pointers/</loc>
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
@@ -25,15 +29,63 @@
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://rux-lang.github.io/rux/types/</loc>
+         <loc>https://rux-lang.github.io/rux/structs/construction/</loc>
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://rux-lang.github.io/rux/unions/</loc>
+         <loc>https://rux-lang.github.io/rux/structs/declare/</loc>
          <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://rux-lang.github.io/rux/variables/</loc>
+         <loc>https://rux-lang.github.io/rux/structs/errors/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/examples/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/extend/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/fields/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/generic/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/impl_notes/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/interface/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/match/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/memory/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/structs/nest/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/types/types/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/unions/unions/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://rux-lang.github.io/rux/variables/variables/</loc>
          <lastmod>2026-06-05</lastmod>
     </url>
 </urlset>

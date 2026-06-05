@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://rux-lang.github.io/rux/">
+        <link rel="canonical" href="https://rux-lang.github.io/rux/structs/impl_notes/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../generic/">
       
       
-        <link rel="next" href="enums/enums/">
+        <link rel="next" href="../interface/">
       
       
         
       
       
-      <link rel="icon" href="../assets/logo.png">
+      <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Rux - Rux Documentation</title>
+        <title>Implementation Notes - Rux Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rux" class="md-skip">
+        <a href="#implementation-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+    <a href="../../.." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rux
+              Implementation Notes
             
           </span>
         </div>
@@ -205,9 +205,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+    <a href="../../.." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     Rux Documentation
@@ -234,7 +234,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -302,7 +302,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -320,7 +320,7 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -399,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="enums/enums/" class="md-nav__link">
+      <a href="../../enums/enums/" class="md-nav__link">
         
   
   
@@ -488,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="functions/functions/" class="md-nav__link">
+      <a href="../../functions/functions/" class="md-nav__link">
         
   
   
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interfaces/interfaces/" class="md-nav__link">
+      <a href="../../interfaces/interfaces/" class="md-nav__link">
         
   
   
@@ -666,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="pointers/pointers/" class="md-nav__link">
+      <a href="../../pointers/pointers/" class="md-nav__link">
         
   
   
@@ -699,6 +699,8 @@
                 
   
   
+    
+  
   
   
     
@@ -738,15 +740,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="structs/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -770,7 +772,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -790,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/construction/" class="md-nav__link">
+      <a href="../construction/" class="md-nav__link">
         
   
   
@@ -818,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/declare/" class="md-nav__link">
+      <a href="../declare/" class="md-nav__link">
         
   
   
@@ -846,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/errors/" class="md-nav__link">
+      <a href="../errors/" class="md-nav__link">
         
   
   
@@ -874,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -902,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/extend/" class="md-nav__link">
+      <a href="../extend/" class="md-nav__link">
         
   
   
@@ -930,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/fields/" class="md-nav__link">
+      <a href="../fields/" class="md-nav__link">
         
   
   
@@ -958,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/generic/" class="md-nav__link">
+      <a href="../generic/" class="md-nav__link">
         
   
   
@@ -983,10 +985,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="structs/impl_notes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Notes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1002,6 +1031,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lowering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lowering
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1014,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/interface/" class="md-nav__link">
+      <a href="../interface/" class="md-nav__link">
         
   
   
@@ -1042,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/match/" class="md-nav__link">
+      <a href="../match/" class="md-nav__link">
         
   
   
@@ -1070,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1098,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/nest/" class="md-nav__link">
+      <a href="../nest/" class="md-nav__link">
         
   
   
@@ -1187,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="types/types/" class="md-nav__link">
+      <a href="../../types/types/" class="md-nav__link">
         
   
   
@@ -1276,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="unions/unions/" class="md-nav__link">
+      <a href="../../unions/unions/" class="md-nav__link">
         
   
   
@@ -1365,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="variables/variables/" class="md-nav__link">
+      <a href="../../variables/variables/" class="md-nav__link">
         
   
   
@@ -1421,6 +1503,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lowering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lowering
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1439,8 +1562,28 @@
   
 
 
-<h1 id="rux">Rux<a class="headerlink" href="#rux" title="Permanent link">&para;</a></h1>
-<p>The official reference documentation for Rux.</p>
+<h1 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h1>
+<h2 id="parsing">Parsing<a class="headerlink" href="#parsing" title="Permanent link">&para;</a></h2>
+<p>The parser recognizes struct declarations with:</p>
+<ul>
+<li><code>struct Name { ... }</code></li>
+<li>optional generic type parameters</li>
+<li>field declarations</li>
+<li>optional public fields</li>
+</ul>
+<p>It also recognizes struct initialization and struct patterns in expression and pattern position.</p>
+<h2 id="semantic-analysis">Semantic analysis<a class="headerlink" href="#semantic-analysis" title="Permanent link">&para;</a></h2>
+<p>The semantic analyzer stores struct declarations, tracks their methods, and records whether a type implements an interface.</p>
+<p>It also preserves type parameters and uses named struct types during type resolution.</p>
+<h2 id="lowering">Lowering<a class="headerlink" href="#lowering" title="Permanent link">&para;</a></h2>
+<p>Struct values are lowered to concrete layouts with field offsets and total size.</p>
+<p>The backend computes:</p>
+<ul>
+<li>field offsets</li>
+<li>field sizes</li>
+<li>total struct size</li>
+<li>alignment</li>
+</ul>
 
 
 
@@ -1495,10 +1638,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

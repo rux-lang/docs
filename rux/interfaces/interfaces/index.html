@@ -1,0 +1,3897 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official reference documentation for Rux">
+      
+      
+      
+        <link rel="canonical" href="https://rux-lang.github.io/rux/interfaces/interfaces/">
+      
+      
+        <link rel="prev" href="../../functions/functions/">
+      
+      
+        <link rel="next" href="../../pointers/pointers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Interfaces - Rux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interfaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interfaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rux-lang/Rux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Rux
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Rux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rux-lang/Rux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Rux
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rux
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enums
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Enums
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/enums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-an-interface-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What an Interface Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What an Interface Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-declaration-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Declaration Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Declaration Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-body-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Body Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Body Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-an-interface-with-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing an Interface with extend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing an Interface with extend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this means
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-interface-implementation-is-checked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Interface Implementation Is Checked
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Interface Implementation Is Checked">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-method-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing method example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-interface-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown interface example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Satisfaction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Satisfaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Calls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-compiler-does-conceptually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the compiler does conceptually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Size Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-methods-and-self" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Methods and self
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Methods and self">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-implementing-an-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type implementing an interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-implementation-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative implementation form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-based-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface-based API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-method-in-interface-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing method in interface body
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-method-name-in-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate method name in interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-interface-in-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown interface in extend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-required-method-in-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing required method in implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-target-type-in-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown target type in extend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice-giant-interface-for-tiny-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice: giant interface for tiny behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-are-contracts-not-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaces are contracts, not objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-interfaces-are-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty interfaces are special
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-current-implementation-is-vtable-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The current implementation is vtable-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods-are-tracked-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods are tracked by name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-interface-type-parameters-in-the-reviewed-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No interface type parameters in the reviewed parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pointers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pointers/pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../structs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Structs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Struct Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/declare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Struct Declarations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/extend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods and extend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/generic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generic Structs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/impl_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interface Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/match/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Struct Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structs/nest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nested Structs and Named Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unions/unions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Variables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-an-interface-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What an Interface Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What an Interface Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-declaration-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Declaration Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Declaration Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-body-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Body Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Body Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-an-interface-with-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing an Interface with extend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing an Interface with extend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this means
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-interface-implementation-is-checked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Interface Implementation Is Checked
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Interface Implementation Is Checked">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-method-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing method example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-interface-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown interface example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Satisfaction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Satisfaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Calls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-compiler-does-conceptually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the compiler does conceptually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Size Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-methods-and-self" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Methods and self
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Methods and self">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-practice_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-implementing-an-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type implementing an interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-implementation-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative implementation form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-based-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface-based API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-method-in-interface-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing method in interface body
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-method-name-in-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate method name in interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-interface-in-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown interface in extend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-required-method-in-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing required method in implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-target-type-in-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown target type in extend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice-giant-interface-for-tiny-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bad practice: giant interface for tiny behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-are-contracts-not-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaces are contracts, not objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-interfaces-are-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty interfaces are special
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-current-implementation-is-vtable-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The current implementation is vtable-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods-are-tracked-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods are tracked by name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-interface-type-parameters-in-the-reviewed-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No interface type parameters in the reviewed parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
+<p>Interfaces define a named contract of methods that a type can satisfy.</p>
+<p>An interface says what operations a type must support, not how the type stores its data. That makes interfaces useful for abstraction, dispatch, and code that wants to work across multiple concrete types without caring about the exact representation.</p>
+<p>In Rux, interfaces are treated as real declarations by the parser, tracked as first-class symbols by semantic analysis, preserved through HIR lowering, and lowered to a vtable-based fat-pointer model in LIR and the backend pipeline.</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>An interface declaration may include:</p>
+<ul>
+<li>an optional <code>pub</code> modifier</li>
+<li>a name</li>
+<li>a brace-delimited method list</li>
+<li>one or more <code>func</code> declarations in the body</li>
+</ul>
+<p>An interface implementation may be written with <code>extend</code> in either of these forms:</p>
+<ul>
+<li><code>extend TypeName : InterfaceName { ... }</code></li>
+<li><code>extend InterfaceName for TypeName { ... }</code></li>
+</ul>
+<hr />
+<h2 id="what-an-interface-means">What an Interface Means<a class="headerlink" href="#what-an-interface-means" title="Permanent link">&para;</a></h2>
+<p>An interface is a method contract.</p>
+<p>It does not describe storage layout.
+It does not define fields.
+It does not define default data.
+It only says: a type using this interface must provide the listed methods.</p>
+<p>That distinction matters.</p>
+<h3 id="good-practice">Good practice<a class="headerlink" href="#good-practice" title="Permanent link">&para;</a></h3>
+<p>Use an interface when you want behavior shared across unrelated types.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Writer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[])</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice">Bad practice<a class="headerlink" href="#bad-practice" title="Permanent link">&para;</a></h3>
+<p>Do not use an interface as a substitute for a struct, a union, or an enum.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="c1">// bad idea: this is trying to model state, not behavior</span>
+<span class="kd">interface</span><span class="w"> </span><span class="n">UserData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Name</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Age</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That may look expressive, but if the thing really has data, a concrete type is usually the clearer design.</p>
+<hr />
+<h2 id="interface-declaration-syntax">Interface Declaration Syntax<a class="headerlink" href="#interface-declaration-syntax" title="Permanent link">&para;</a></h2>
+<p>The general shape of an interface is:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Method</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">ReturnType</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="public-interfaces">Public interfaces<a class="headerlink" href="#public-interfaces" title="Permanent link">&para;</a></h3>
+<p>An interface may be marked <code>pub</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Serialize</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Public visibility controls whether the interface is visible outside the defining scope, using the same visibility model as the rest of the language.</p>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The parser recognizes <code>interface</code> declarations at top level.</li>
+<li>Interface bodies contain <code>func</code> declarations.</li>
+<li>The reviewed parser does not show interface type parameters.</li>
+<li>The reviewed parser does not show interface fields.</li>
+</ul>
+<hr />
+<h2 id="interface-methods">Interface Methods<a class="headerlink" href="#interface-methods" title="Permanent link">&para;</a></h2>
+<p>An interface is made up of methods.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="method-rules">Method rules<a class="headerlink" href="#method-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Each method must be declared with <code>func</code>.</li>
+<li>The interface body does not accept random statements or fields.</li>
+<li>The semantic analyzer checks that method names are unique within the interface.</li>
+<li>Each method’s parameters and return type are resolved like normal function types.</li>
+</ul>
+<h3 id="good-practice_1">Good practice<a class="headerlink" href="#good-practice_1" title="Permanent link">&para;</a></h3>
+<p>Keep interface method sets small and intention-focused.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Readable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Read</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[])</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Small contracts are easier to implement, easier to test, and easier to reason about.</p>
+<h3 id="bad-practice_1">Bad practice<a class="headerlink" href="#bad-practice_1" title="Permanent link">&para;</a></h3>
+<p>Do not overload an interface with too many unrelated requirements.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">MegaObject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Serialize</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[];</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Hash</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Clone</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Self</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">DebugDump</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That kind of interface becomes annoying to implement and hard to reuse.</p>
+<hr />
+<h2 id="interface-body-rules">Interface Body Rules<a class="headerlink" href="#interface-body-rules" title="Permanent link">&para;</a></h2>
+<p>The reviewed parser accepts <code>func</code> declarations inside the interface body.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">MathLike</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Abs</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Sign</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The parser expects <code>func</code> inside an interface body.</li>
+<li>Each method is parsed with normal function syntax.</li>
+<li>The semantic analyzer records the method names for duplicate checking and later implementation validation.</li>
+</ul>
+<h3 id="good-practice_2">Good practice<a class="headerlink" href="#good-practice_2" title="Permanent link">&para;</a></h3>
+<p>Use clean, signature-style method declarations.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_2">Bad practice<a class="headerlink" href="#bad-practice_2" title="Permanent link">&para;</a></h3>
+<p>Do not depend on interface methods behaving like full concrete implementations.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Weird</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">DoThing</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">int32</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Even if the parser can accept the shape, interfaces are conceptually a contract, not a home for actual behavior.</p>
+<hr />
+<h2 id="implementing-an-interface-with-extend">Implementing an Interface with <code>extend</code><a class="headerlink" href="#implementing-an-interface-with-extend" title="Permanent link">&para;</a></h2>
+<p>Interfaces are implemented through <code>extend</code>.</p>
+<p>The parser supports two equivalent forms:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>and:</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="what-this-means">What this means<a class="headerlink" href="#what-this-means" title="Permanent link">&para;</a></h3>
+<p>Both forms attach methods to a concrete type and optionally declare that the type implements an interface.</p>
+<p>The implementation is not just a loose comment. The semantic analyzer checks that the interface exists and that all required methods are present.</p>
+<h3 id="good-practice_3">Good practice<a class="headerlink" href="#good-practice_3" title="Permanent link">&para;</a></h3>
+<p>Use the form that reads best for the surrounding codebase, but keep it consistent in the project.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_3">Bad practice<a class="headerlink" href="#bad-practice_3" title="Permanent link">&para;</a></h3>
+<p>Do not scatter interface implementations across unrelated files unless the codebase has a strong module convention for it.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That is valid, but if implementations are spread everywhere, searching becomes painful.</p>
+<hr />
+<h2 id="how-interface-implementation-is-checked">How Interface Implementation Is Checked<a class="headerlink" href="#how-interface-implementation-is-checked" title="Permanent link">&para;</a></h2>
+<p>The semantic analyzer tracks which methods are attached to which type.</p>
+<p>When an <code>extend</code> block names an interface, the compiler checks:</p>
+<ul>
+<li>that the target type exists</li>
+<li>that the interface exists</li>
+<li>that every required interface method is present in the implementation</li>
+</ul>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="missing-method-example">Missing method example<a class="headerlink" href="#missing-method-example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// missing ToString</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That should be rejected because the implementation does not satisfy the contract.</p>
+<h3 id="unknown-interface-example">Unknown interface example<a class="headerlink" href="#unknown-interface-example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NotARealInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That should be rejected because the interface name must resolve to a known interface.</p>
+<h3 id="good-practice_4">Good practice<a class="headerlink" href="#good-practice_4" title="Permanent link">&para;</a></h3>
+<p>Keep interface implementations complete and explicit.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_4">Bad practice<a class="headerlink" href="#bad-practice_4" title="Permanent link">&para;</a></h3>
+<p>Do not define an <code>extend</code> block with an interface name and then leave the required methods half-done.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">SomethingElse</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;oops&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That is the kind of thing that compiles only if your compiler forgets to check the contract, and that would be a bug.</p>
+<hr />
+<h2 id="interface-satisfaction">Interface Satisfaction<a class="headerlink" href="#interface-satisfaction" title="Permanent link">&para;</a></h2>
+<p>A type satisfies an interface when the compiler can prove it has the required methods.</p>
+<p>That can matter in assignment and conversion contexts.</p>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span><span class="w"> </span><span class="n">d</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="m">3.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="notes_2">Notes<a class="headerlink" href="#notes_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The semantic analyzer treats interface compatibility as a distinct assignability rule.</li>
+<li>Empty interfaces are trivially satisfied by any type.</li>
+<li>For non-empty interfaces, the compiler checks whether the type’s recorded interface implementation contains the target interface name.</li>
+<li>Integer platform aliases such as <code>int</code> and <code>uint</code> may be checked through their corresponding fixed-width forms during interface satisfaction in the current analyzer logic.</li>
+</ul>
+<h3 id="good-practice_5">Good practice<a class="headerlink" href="#good-practice_5" title="Permanent link">&para;</a></h3>
+<p>Use interface assignments to express abstraction boundaries.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">PrintAny</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Print</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_5">Bad practice<a class="headerlink" href="#bad-practice_5" title="Permanent link">&para;</a></h3>
+<p>Do not use interface types everywhere just because you can.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Work</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// if every function becomes interface-driven, you lose concrete clarity fast</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Interfaces are powerful, but overusing them can make code harder to optimize and harder to follow.</p>
+<hr />
+<h2 id="interface-calls">Interface Calls<a class="headerlink" href="#interface-calls" title="Permanent link">&para;</a></h2>
+<p>When a value is used as an interface, the compiler lowers method calls through a vtable-based dispatch model.</p>
+<p>That means the call is resolved by looking up the method through the interface metadata rather than by calling a concrete symbol directly.</p>
+<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">PrintIt</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Print</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="what-the-compiler-does-conceptually">What the compiler does conceptually<a class="headerlink" href="#what-the-compiler-does-conceptually" title="Permanent link">&para;</a></h3>
+<ol>
+<li>keep the concrete data pointer</li>
+<li>keep a vtable pointer for the interface implementation</li>
+<li>use the method index to find the function pointer</li>
+<li>call indirectly through that function pointer</li>
+</ol>
+<h3 id="good-practice_6">Good practice<a class="headerlink" href="#good-practice_6" title="Permanent link">&para;</a></h3>
+<p>Use interface dispatch when the caller genuinely does not care about the concrete type.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Render</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Print</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_6">Bad practice<a class="headerlink" href="#bad-practice_6" title="Permanent link">&para;</a></h3>
+<p>Do not route hot inner loops through interface dispatch unless the abstraction is really worth the overhead.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">items</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Print</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This may be perfectly fine for application code, but it is not free.</p>
+<hr />
+<h2 id="memory-model">Memory Model<a class="headerlink" href="#memory-model" title="Permanent link">&para;</a></h2>
+<p>Interfaces are not plain structs.</p>
+<p>The current lowering pipeline models them as a 16-byte fat pointer:</p>
+<ul>
+<li>8 bytes for the data pointer</li>
+<li>8 bytes for the vtable pointer</li>
+</ul>
+<h3 id="shape">Shape<a class="headerlink" href="#shape" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code>{ data_ptr, vtable_ptr }
+</code></pre></div>
+<h3 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
+<p>That representation is used by lowering and by the backend when copying, storing, or calling through an interface value.</p>
+<h3 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">d</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="m">3.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>The lowered value is not just the raw <code>Vector</code>. It is a pair of pointers describing the concrete storage and the interface dispatch table.</p>
+<h3 id="good-practice_7">Good practice<a class="headerlink" href="#good-practice_7" title="Permanent link">&para;</a></h3>
+<p>Remember that interface values carry indirection.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Use</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Print</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_7">Bad practice<a class="headerlink" href="#bad-practice_7" title="Permanent link">&para;</a></h3>
+<p>Do not assume interface values are zero-cost or the same size as the underlying type.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="m">3.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>The interface value is larger and less direct than the concrete value.</p>
+<hr />
+<h2 id="size-rules">Size Rules<a class="headerlink" href="#size-rules" title="Permanent link">&para;</a></h2>
+<p>The current compiler model gives interfaces a size of 16 bytes.</p>
+<p>That matches the fat-pointer representation:</p>
+<ul>
+<li><code>data</code> pointer = 8 bytes</li>
+<li><code>vtable</code> pointer = 8 bytes</li>
+</ul>
+<h3 id="layout-example">Layout example<a class="headerlink" href="#layout-example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Typical interface layout:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Offset</th>
+<th style="text-align: right;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>vtable</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+<p>Total size:</p>
+<div class="language-text highlight"><pre><span></span><code>16 bytes
+</code></pre></div>
+<h3 id="notes_3">Notes<a class="headerlink" href="#notes_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The HIR size model returns 16 bytes for interface named types.</li>
+<li>The RCU lowering path also treats interface names as 16-byte values in field lookup and layout handling.</li>
+<li>The LIR lowering path copies interface values as two pointer-sized fields.</li>
+</ul>
+<h3 id="good-practice_8">Good practice<a class="headerlink" href="#good-practice_8" title="Permanent link">&para;</a></h3>
+<p>Treat interface values as a fixed-size abstraction wrapper.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="m">3.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="bad-practice_8">Bad practice<a class="headerlink" href="#bad-practice_8" title="Permanent link">&para;</a></h3>
+<p>Do not hard-code assumptions about interface size unless you are specifically targeting this compiler’s current runtime model.</p>
+<hr />
+<h2 id="interface-methods-and-self">Interface Methods and <code>self</code><a class="headerlink" href="#interface-methods-and-self" title="Permanent link">&para;</a></h2>
+<p>Interface methods are usually written with <code>self</code> as the first parameter.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That matches the way methods are later lowered and associated with concrete receiver types.</p>
+<h3 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The parser already recognizes <code>self</code> as a special parameter form.</li>
+<li>Lowering creates an implicit self binding for methods inside <code>extend</code> blocks.</li>
+<li>Interface methods are checked using their declared parameter and return types.</li>
+</ul>
+<h3 id="good-practice_9">Good practice<a class="headerlink" href="#good-practice_9" title="Permanent link">&para;</a></h3>
+<p>Make the receiver explicit and consistent.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Cloneable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Clone</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Self</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice_9">Bad practice<a class="headerlink" href="#bad-practice_9" title="Permanent link">&para;</a></h3>
+<p>Do not hide the receiver in a confusing parameter shape.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Weird</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Clone</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">Self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Self</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That is legal-looking but semantically awkward.</p>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="simple-interface">Simple interface<a class="headerlink" href="#simple-interface" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="public-interface">Public interface<a class="headerlink" href="#public-interface" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Serialize</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="type-implementing-an-interface">Type implementing an interface<a class="headerlink" href="#type-implementing-an-interface" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="alternative-implementation-form">Alternative implementation form<a class="headerlink" href="#alternative-implementation-form" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="interface-based-api">Interface-based API<a class="headerlink" href="#interface-based-api" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Writer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[])</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">func</span><span class="w"> </span><span class="nf">Log</span><span class="p">(</span><span class="n">writer</span><span class="p">:</span><span class="w"> </span><span class="n">Writer</span><span class="p">,</span><span class="w"> </span><span class="n">bytes</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">writer</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h2>
+<h3 id="missing-method-in-interface-body">Missing method in interface body<a class="headerlink" href="#missing-method-in-interface-body" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="duplicate-method-name-in-interface">Duplicate method name in interface<a class="headerlink" href="#duplicate-method-name-in-interface" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">A</span><span class="p">(</span><span class="n">self</span><span class="p">);</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">A</span><span class="p">(</span><span class="n">self</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="unknown-interface-in-extend">Unknown interface in <code>extend</code><a class="headerlink" href="#unknown-interface-in-extend" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NotAnInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="missing-required-method-in-implementation">Missing required method in implementation<a class="headerlink" href="#missing-required-method-in-implementation" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Other</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Vector&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="unknown-target-type-in-extend">Unknown target type in <code>extend</code><a class="headerlink" href="#unknown-target-type-in-extend" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">MissingType</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="bad-practice-giant-interface-for-tiny-behavior">Bad practice: giant interface for tiny behavior<a class="headerlink" href="#bad-practice-giant-interface-for-tiny-behavior" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="n">DoEverything</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Read</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[])</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">[])</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">uint64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Open</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Close</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Flush</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span>
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Seek</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">:</span><span class="w"> </span><span class="kt">uint64</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That kind of interface often becomes a maintenance burden.</p>
+<hr />
+<h2 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Permanent link">&para;</a></h2>
+<h3 id="interfaces-are-contracts-not-objects">Interfaces are contracts, not objects<a class="headerlink" href="#interfaces-are-contracts-not-objects" title="Permanent link">&para;</a></h3>
+<p>An interface describes what a type can do.
+It does not describe what a type is made of.</p>
+<h3 id="empty-interfaces-are-special">Empty interfaces are special<a class="headerlink" href="#empty-interfaces-are-special" title="Permanent link">&para;</a></h3>
+<p>An empty interface is trivially satisfied by every type in the current semantic model.</p>
+<p>That is useful, but it also means empty interfaces can easily become too broad to be meaningful.</p>
+<h3 id="the-current-implementation-is-vtable-based">The current implementation is vtable-based<a class="headerlink" href="#the-current-implementation-is-vtable-based" title="Permanent link">&para;</a></h3>
+<p>The lowering pipeline turns interface values into a concrete data pointer plus a vtable pointer.</p>
+<p>That is why interface calls and interface copies behave differently from plain value copies.</p>
+<h3 id="methods-are-tracked-by-name">Methods are tracked by name<a class="headerlink" href="#methods-are-tracked-by-name" title="Permanent link">&para;</a></h3>
+<p>The semantic analyzer stores interface method names and compares them against implementation methods when validating <code>extend</code> blocks.</p>
+<h3 id="no-interface-type-parameters-in-the-reviewed-parser">No interface type parameters in the reviewed parser<a class="headerlink" href="#no-interface-type-parameters-in-the-reviewed-parser" title="Permanent link">&para;</a></h3>
+<p>The reviewed parser shows plain <code>interface Name { ... }</code> syntax, not a generic <code>interface Name&lt;T&gt; { ... }</code> form.</p>
+<hr />
+<h2 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h2>
+<p>This section describes how the compiler currently handles interfaces internally.</p>
+<h3 id="parsing">Parsing<a class="headerlink" href="#parsing" title="Permanent link">&para;</a></h3>
+<p>The parser recognizes:</p>
+<ul>
+<li><code>interface Name { ... }</code></li>
+<li>optional <code>pub</code></li>
+<li><code>func</code> declarations in the interface body</li>
+<li><code>extend TypeName : InterfaceName { ... }</code></li>
+<li><code>extend InterfaceName for TypeName { ... }</code></li>
+</ul>
+<h3 id="semantic-analysis">Semantic analysis<a class="headerlink" href="#semantic-analysis" title="Permanent link">&para;</a></h3>
+<p>The semantic analyzer:</p>
+<ul>
+<li>stores interfaces in a dedicated symbol kind</li>
+<li>records method names for each interface</li>
+<li>rejects duplicate method names inside one interface</li>
+<li>resolves method parameter and return types</li>
+<li>checks <code>extend</code> blocks against required interface methods</li>
+<li>tracks which concrete types implement which interfaces</li>
+<li>uses interface satisfaction during assignability checks</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Rux Contributors
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://rux-lang.github.io/rux/">
+        <link rel="canonical" href="https://rux-lang.github.io/rux/structs/memory/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../match/">
       
       
-        <link rel="next" href="enums/enums/">
+        <link rel="next" href="../nest/">
       
       
         
       
       
-      <link rel="icon" href="../assets/logo.png">
+      <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Rux - Rux Documentation</title>
+        <title>Memory - Rux Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rux" class="md-skip">
+        <a href="#memory" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+    <a href="../../.." title="Rux Documentation" class="md-header__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rux
+              Memory
             
           </span>
         </div>
@@ -205,9 +205,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
+    <a href="../../.." title="Rux Documentation" class="md-nav__button md-logo" aria-label="Rux Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     Rux Documentation
@@ -234,7 +234,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -302,7 +302,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -320,7 +320,7 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -399,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="enums/enums/" class="md-nav__link">
+      <a href="../../enums/enums/" class="md-nav__link">
         
   
   
@@ -488,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="functions/functions/" class="md-nav__link">
+      <a href="../../functions/functions/" class="md-nav__link">
         
   
   
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interfaces/interfaces/" class="md-nav__link">
+      <a href="../../interfaces/interfaces/" class="md-nav__link">
         
   
   
@@ -666,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="pointers/pointers/" class="md-nav__link">
+      <a href="../../pointers/pointers/" class="md-nav__link">
         
   
   
@@ -699,6 +699,8 @@
                 
   
   
+    
+  
   
   
     
@@ -738,15 +740,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="structs/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -770,7 +772,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -790,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/construction/" class="md-nav__link">
+      <a href="../construction/" class="md-nav__link">
         
   
   
@@ -818,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/declare/" class="md-nav__link">
+      <a href="../declare/" class="md-nav__link">
         
   
   
@@ -846,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/errors/" class="md-nav__link">
+      <a href="../errors/" class="md-nav__link">
         
   
   
@@ -874,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -902,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/extend/" class="md-nav__link">
+      <a href="../extend/" class="md-nav__link">
         
   
   
@@ -930,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/fields/" class="md-nav__link">
+      <a href="../fields/" class="md-nav__link">
         
   
   
@@ -958,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/generic/" class="md-nav__link">
+      <a href="../generic/" class="md-nav__link">
         
   
   
@@ -986,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/impl_notes/" class="md-nav__link">
+      <a href="../impl_notes/" class="md-nav__link">
         
   
   
@@ -1014,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/interface/" class="md-nav__link">
+      <a href="../interface/" class="md-nav__link">
         
   
   
@@ -1042,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/match/" class="md-nav__link">
+      <a href="../match/" class="md-nav__link">
         
   
   
@@ -1067,10 +1069,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="structs/memory/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1086,6 +1115,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#another-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Another example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Size Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitive-field-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive field sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-size-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct size computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested structs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1098,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="structs/nest/" class="md-nav__link">
+      <a href="../nest/" class="md-nav__link">
         
   
   
@@ -1187,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="types/types/" class="md-nav__link">
+      <a href="../../types/types/" class="md-nav__link">
         
   
   
@@ -1276,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="unions/unions/" class="md-nav__link">
+      <a href="../../unions/unions/" class="md-nav__link">
         
   
   
@@ -1365,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="variables/variables/" class="md-nav__link">
+      <a href="../../variables/variables/" class="md-nav__link">
         
   
   
@@ -1421,6 +1592,136 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#another-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Another example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Size Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitive-field-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primitive field sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct-size-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct size computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested structs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1439,8 +1740,123 @@
   
 
 
-<h1 id="rux">Rux<a class="headerlink" href="#rux" title="Permanent link">&para;</a></h1>
-<p>The official reference documentation for Rux.</p>
+<h1 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h1>
+<h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
+<p>Struct layout is determined by the compiler.</p>
+<p>The current layout model preserves field order and computes offsets using alignment rules.</p>
+<h3 id="general-rules">General rules<a class="headerlink" href="#general-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fields are laid out in declaration order.</li>
+<li>Each field is aligned based on its size.</li>
+<li>The overall struct size is padded up to the maximum alignment.</li>
+<li>Alignment is capped at 8 bytes in the current layout model.</li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A typical layout for this struct is:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Offset</th>
+<th style="text-align: right;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>y</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+<p>Total size:</p>
+<div class="language-text highlight"><pre><span></span><code>16 bytes
+</code></pre></div>
+<h3 id="another-example">Another example<a class="headerlink" href="#another-example" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Mixed</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A typical layout is:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Offset</th>
+<th style="text-align: right;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>b</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p>The compiler inserts padding between fields when required to satisfy alignment.</p>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Field offsets are compiler-defined, not arbitrary.</li>
+<li>Field order is preserved.</li>
+<li>Layout depends on the field types and their sizes.</li>
+<li>Named fields that themselves resolve to structured types may contribute their own layout and alignment.</li>
+</ul>
+<hr />
+<h2 id="size-rules">Size Rules<a class="headerlink" href="#size-rules" title="Permanent link">&para;</a></h2>
+<p>The compiler’s size model is used by semantic analysis, lowering, and backend code generation.</p>
+<h3 id="primitive-field-sizes">Primitive field sizes<a class="headerlink" href="#primitive-field-sizes" title="Permanent link">&para;</a></h3>
+<p>Common field sizes are:</p>
+<ul>
+<li><code>bool8</code>, <code>char8</code>, <code>int8</code>, <code>uint8</code> → 1 byte</li>
+<li><code>bool16</code>, <code>char16</code>, <code>int16</code>, <code>uint16</code> → 2 bytes</li>
+<li><code>bool32</code>, <code>char32</code>, <code>int32</code>, <code>uint32</code>, <code>float32</code> → 4 bytes</li>
+<li><code>int64</code>, <code>uint64</code>, <code>int</code>, <code>uint</code>, <code>float64</code>, pointers, <code>String</code>, function values → 8 bytes</li>
+<li>slices → 16 bytes</li>
+<li><code>opaque</code> → 0 bytes</li>
+</ul>
+<h3 id="struct-size-computation">Struct size computation<a class="headerlink" href="#struct-size-computation" title="Permanent link">&para;</a></h3>
+<p>For each field:</p>
+<ol>
+<li>determine the field’s size</li>
+<li>compute alignment as the field size clamped to 8 bytes</li>
+<li>align the current offset</li>
+<li>place the field</li>
+<li>advance the offset by the field size</li>
+</ol>
+<p>After all fields are placed, the total size is aligned to the maximum field alignment.</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Small</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Total size is typically 3 bytes, then rounded up to the struct alignment boundary.</p>
+<h3 id="nested-structs">Nested structs<a class="headerlink" href="#nested-structs" title="Permanent link">&para;</a></h3>
+<p>Nested structs contribute their own size and alignment.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Outer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">inner</span><span class="p">:</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tag</span><span class="p">:</span><span class="w"> </span><span class="kt">uint8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The compiler uses the known layout of <code>Point</code> when computing the layout of <code>Outer</code></p>
 
 
 
@@ -1495,10 +1911,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://rux-lang.github.io/rux/structs/extend/">
+        <link rel="canonical" href="https://rux-lang.github.io/rux/functions/function_kinds/">
       
       
-        <link rel="prev" href="../examples/">
+        <link rel="prev" href="../external/">
       
       
-        <link rel="next" href="../fields/">
+        <link rel="next" href="../impl_notes/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Methods and extend - Rux Documentation</title>
+        <title>Function Kinds - Rux Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#methods-and-extend" class="md-skip">
+        <a href="#function-kinds" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Methods and extend
+              Function Kinds
             
           </span>
         </div>
@@ -462,6 +462,8 @@
                 
   
   
+    
+  
   
   
     
@@ -509,15 +511,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../functions/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -541,7 +543,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -561,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/call/" class="md-nav__link">
+      <a href="../call/" class="md-nav__link">
         
   
   
@@ -589,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/common_errors/" class="md-nav__link">
+      <a href="../common_errors/" class="md-nav__link">
         
   
   
@@ -617,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/declaration/" class="md-nav__link">
+      <a href="../declaration/" class="md-nav__link">
         
   
   
@@ -645,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/default_params/" class="md-nav__link">
+      <a href="../default_params/" class="md-nav__link">
         
   
   
@@ -673,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -701,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/extend/" class="md-nav__link">
+      <a href="../extend/" class="md-nav__link">
         
   
   
@@ -729,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/external/" class="md-nav__link">
+      <a href="../external/" class="md-nav__link">
         
   
   
@@ -754,10 +756,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../functions/function_kinds/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Function Kinds
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -773,6 +802,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#regular-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signature-only-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signature-only functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operator-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operator functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assembly-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assembly functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -785,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/impl_notes/" class="md-nav__link">
+      <a href="../impl_notes/" class="md-nav__link">
         
   
   
@@ -813,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/notes/" class="md-nav__link">
+      <a href="../notes/" class="md-nav__link">
         
   
   
@@ -841,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/overload/" class="md-nav__link">
+      <a href="../overload/" class="md-nav__link">
         
   
   
@@ -869,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/params/" class="md-nav__link">
+      <a href="../params/" class="md-nav__link">
         
   
   
@@ -897,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/return_types/" class="md-nav__link">
+      <a href="../return_types/" class="md-nav__link">
         
   
   
@@ -925,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/type_params/" class="md-nav__link">
+      <a href="../type_params/" class="md-nav__link">
         
   
   
@@ -953,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/variadic/" class="md-nav__link">
+      <a href="../variadic/" class="md-nav__link">
         
   
   
@@ -1009,7 +1124,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../functions/methods/" class="md-nav__link ">
+            <a href="../methods/" class="md-nav__link ">
               
   
   
@@ -1053,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/methods/instance/" class="md-nav__link">
+      <a href="../methods/instance/" class="md-nav__link">
         
   
   
@@ -1081,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/methods/operator/" class="md-nav__link">
+      <a href="../methods/operator/" class="md-nav__link">
         
   
   
@@ -1109,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/methods/resolution/" class="md-nav__link">
+      <a href="../methods/resolution/" class="md-nav__link">
         
   
   
@@ -1137,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../functions/methods/static/" class="md-nav__link">
+      <a href="../methods/static/" class="md-nav__link">
         
   
   
@@ -1356,8 +1471,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1395,15 +1508,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../structs/" class="md-nav__link ">
               
   
   
@@ -1427,7 +1540,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1447,7 +1560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../construction/" class="md-nav__link">
+      <a href="../../structs/construction/" class="md-nav__link">
         
   
   
@@ -1475,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../declaration/" class="md-nav__link">
+      <a href="../../structs/declaration/" class="md-nav__link">
         
   
   
@@ -1503,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
+      <a href="../../structs/errors/" class="md-nav__link">
         
   
   
@@ -1531,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../structs/examples/" class="md-nav__link">
         
   
   
@@ -1556,37 +1669,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Methods and extend
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../structs/extend/" class="md-nav__link">
         
   
   
@@ -1602,59 +1688,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instance methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#static-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Static methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operator-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operator methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1667,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fields/" class="md-nav__link">
+      <a href="../../structs/fields/" class="md-nav__link">
         
   
   
@@ -1695,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../generic/" class="md-nav__link">
+      <a href="../../structs/generic/" class="md-nav__link">
         
   
   
@@ -1723,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../impl_notes/" class="md-nav__link">
+      <a href="../../structs/impl_notes/" class="md-nav__link">
         
   
   
@@ -1751,7 +1784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interface/" class="md-nav__link">
+      <a href="../../structs/interface/" class="md-nav__link">
         
   
   
@@ -1779,7 +1812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../match/" class="md-nav__link">
+      <a href="../../structs/match/" class="md-nav__link">
         
   
   
@@ -1807,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
+      <a href="../../structs/memory/" class="md-nav__link">
         
   
   
@@ -2137,10 +2170,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
+  <a href="#regular-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instance methods
+        Regular functions
       
     </span>
   </a>
@@ -2148,10 +2181,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-methods" class="md-nav__link">
+  <a href="#signature-only-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Static methods
+        Signature-only functions
       
     </span>
   </a>
@@ -2159,10 +2192,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operator-methods" class="md-nav__link">
+  <a href="#operator-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Operator methods
+        Operator functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assembly-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assembly functions
       
     </span>
   </a>
@@ -2189,50 +2255,45 @@
   
 
 
-<h1 id="methods-and-extend">Methods and <code>extend</code><a class="headerlink" href="#methods-and-extend" title="Permanent link">&para;</a></h1>
-<p>Methods can be attached to structs with <code>extend</code>.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
-<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
-<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
+<h1 id="function-kinds">Function Kinds<a class="headerlink" href="#function-kinds" title="Permanent link">&para;</a></h1>
+<h2 id="regular-functions">Regular functions<a class="headerlink" href="#regular-functions" title="Permanent link">&para;</a></h2>
+<p>Regular functions are declared with <code>func</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">int32</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div>
+<p>These are the standard callable declarations used for ordinary code.</p>
+<h2 id="signature-only-functions">Signature-only functions<a class="headerlink" href="#signature-only-functions" title="Permanent link">&para;</a></h2>
+<p>A function may be declared without a body.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">PrintLine</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[]);</span>
+</code></pre></div>
+<p>This form is useful for declarations that are defined elsewhere or only needed as a signature.</p>
+<h2 id="operator-functions">Operator functions<a class="headerlink" href="#operator-functions" title="Permanent link">&para;</a></h2>
+<p>Functions may use operator names.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="n">func</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">Vector</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Operator functions participate in overload resolution like normal named functions.</p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p>Methods are functions declared inside an <code>extend</code> block.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="instance-methods">Instance methods<a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h2>
-<p>Instance methods take <code>self</code> as their first parameter.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
-<span class="p">}</span>
+<p>Methods are called using the <code>.</code> syntax on a value, and the compiler resolves the correct method based on the receiver type.</p>
+<h2 id="external-functions">External functions<a class="headerlink" href="#external-functions" title="Permanent link">&para;</a></h2>
+<p>External functions are declared with <code>extern</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="k">func</span><span class="w"> </span><span class="nf">CreateFileA</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[],</span><span class="w"> </span><span class="n">access</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="o">*</span><span class="kt">opaque</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="static-methods">Static methods<a class="headerlink" href="#static-methods" title="Permanent link">&para;</a></h2>
-<p>A method without <code>self</code> behaves like an associated function.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">New</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<p>These declarations describe symbols that are provided by a DLL, system library, or another external object file.</p>
+<h2 id="assembly-functions">Assembly functions<a class="headerlink" href="#assembly-functions" title="Permanent link">&para;</a></h2>
+<p>A function may be marked <code>asm</code>.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="k">asm</span><span class="w"> </span><span class="k">func</span><span class="w"> </span><span class="nf">FastAdd</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">int32</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">int32</span><span class="p">;</span>
 </code></pre></div>
-<p>Called as:</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">::</span><span class="n">New</span><span class="p">(</span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="m">3.0</span><span class="p">);</span>
-</code></pre></div>
-<h2 id="operator-methods">Operator methods<a class="headerlink" href="#operator-methods" title="Permanent link">&para;</a></h2>
-<p>A struct may define operator methods inside <code>extend</code>.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">func</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">:</span><span class="w"> </span><span class="n">Vector</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
-<span class="w">            </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
-<span class="w">            </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">z</span>
-<span class="w">        </span><span class="p">};</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>These are resolved by the compiler like ordinary methods, but using operator syntax.</p>
+<p>Assembly functions are part of the function system, but their implementation is expected to come from assembly rather than normal Rux source.</p>
 
 
 

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://rux-lang.github.io/rux/structs/extend/">
+        <link rel="canonical" href="https://rux-lang.github.io/rux/structs/declaration/">
       
       
-        <link rel="prev" href="../examples/">
+        <link rel="prev" href="../construction/">
       
       
-        <link rel="next" href="../fields/">
+        <link rel="next" href="../errors/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Methods and extend - Rux Documentation</title>
+        <title>Struct Declarations - Rux Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#methods-and-extend" class="md-skip">
+        <a href="#struct-declarations" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Methods and extend
+              Struct Declarations
             
           </span>
         </div>
@@ -1472,10 +1472,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../declaration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Struct Declarations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1491,6 +1518,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1556,37 +1625,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Methods and extend
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../extend/" class="md-nav__link">
         
   
   
@@ -1602,59 +1644,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instance methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#static-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Static methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operator-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operator methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2137,10 +2126,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instance methods
+        Example
       
     </span>
   </a>
@@ -2148,21 +2137,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-methods" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Static methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operator-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operator methods
+        Notes
       
     </span>
   </a>
@@ -2189,50 +2167,31 @@
   
 
 
-<h1 id="methods-and-extend">Methods and <code>extend</code><a class="headerlink" href="#methods-and-extend" title="Permanent link">&para;</a></h1>
-<p>Methods can be attached to structs with <code>extend</code>.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<h1 id="struct-declarations">Struct Declarations<a class="headerlink" href="#struct-declarations" title="Permanent link">&para;</a></h1>
+<p>A struct is declared with the <code>struct</code> keyword.</p>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
 <span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
-<span class="w">    </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="instance-methods">Instance methods<a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h2>
-<p>Instance methods take <code>self</code> as their first parameter.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+<p>Each field has:</p>
+<ul>
+<li>a name</li>
+<li>a type</li>
+<li>an optional <code>pub</code> modifier</li>
+</ul>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<div class="language-rux highlight"><pre><span></span><code><span class="kd">struct</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">char8</span><span class="p">[];</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">uint32</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="static-methods">Static methods<a class="headerlink" href="#static-methods" title="Permanent link">&para;</a></h2>
-<p>A method without <code>self</code> behaves like an associated function.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="nf">New</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Called as:</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">::</span><span class="n">New</span><span class="p">(</span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="m">2.0</span><span class="p">,</span><span class="w"> </span><span class="m">3.0</span><span class="p">);</span>
-</code></pre></div>
-<h2 id="operator-methods">Operator methods<a class="headerlink" href="#operator-methods" title="Permanent link">&para;</a></h2>
-<p>A struct may define operator methods inside <code>extend</code>.</p>
-<div class="language-rux highlight"><pre><span></span><code><span class="k">extend</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">func</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">:</span><span class="w"> </span><span class="n">Vector</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
-<span class="w">            </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
-<span class="w">            </span><span class="n">z</span><span class="p">:</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">z</span>
-<span class="w">        </span><span class="p">};</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>These are resolved by the compiler like ordinary methods, but using operator syntax.</p>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fields are written in declaration order.</li>
+<li>Each field ends with a semicolon.</li>
+<li>Struct declarations may appear at module level or inside nested modules.</li>
+</ul>
 
 
 

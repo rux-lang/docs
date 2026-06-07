@@ -1,3 +1,7 @@
-# This is the official Rux Documentation
+# Rux Documentation
 
-This is the markdown for the official [Rux Documentation Website](https://rux-lang.github.io/Docs/)
+This repository contains the source files for the official Rux documentation website.
+
+Documentation website:
+
+https://rux-lang.github.io/Docs/

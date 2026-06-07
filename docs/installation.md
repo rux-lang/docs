@@ -1,6 +1,6 @@
 # Installation
 
-This guide explains how to install the Rux compiler.
+This guide explains how to install the Rux compiler and package manager.
 
 ---
 
@@ -20,22 +20,22 @@ Install Rux:
 scoop install rux-lang/rux
 ```
 
-### Installer
+### Releases
 
-Download the latest installer from the GitHub releases page.
+Prebuilt binaries are available from the GitHub releases page.
 
-Available installers:
+Available downloads:
 
-* `.msi`
-* `.exe`
+* `.msi` — installs Rux on the system
+* `.exe` — standalone Rux executable
 
-Run the installer and follow the on-screen instructions.
+The standalone executable can be used directly without running an installer.
 
 ---
 
 ## Arch Linux
 
-Rux is available through the AUR.
+Rux is available from the AUR.
 
 ```bash
 yay -S rux-git
@@ -49,7 +49,7 @@ paru -S rux-git
 
 ---
 
-## Fedora and COPR-based Distributions
+## Fedora and COPR-Based Distributions
 
 Enable the Rux COPR repository:
 
@@ -63,11 +63,13 @@ Install Rux:
 sudo dnf install rux
 ```
 
+---
+
 ## Other Distributions
 
-For distributions without an official package, Rux can be built from [source](https://github.com/rux-lang/Rux/).
+For distributions without an official package, Rux can be built from source.
 
-See the build instructions in the repository for details.
+See the repository build instructions for the latest requirements and build steps.
 
 ---
 
